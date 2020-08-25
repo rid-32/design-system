@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const common = require('./webpack.common.js');
 
@@ -11,6 +12,7 @@ const plugins = [
   new MiniCssExtractPlugin({
     filename: '[name].[hash].css',
   }),
+  new CleanWebpackPlugin(),
 ];
 
 const styleLoader = {
